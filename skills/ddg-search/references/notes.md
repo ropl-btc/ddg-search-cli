@@ -7,6 +7,12 @@ Use this tool for lightweight search when:
 - the default search path looks weak, noisy, or inaccurate and you want a second source
 - you want a quick no-key search tool for scripts or agent workflows
 
+Use these commands intentionally:
+- `search` for normal web/news/image/video results
+- `search --site <domain>` when you already know the target site
+- `instant` for instant-answer style lookups
+- `bang` when DuckDuckGo bang routing is the cleanest path to a target site
+
 Use a browser tool instead when:
 - you need to log in
 - you need to interact with a site

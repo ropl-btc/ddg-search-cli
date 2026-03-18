@@ -1,6 +1,6 @@
 ---
 name: ddg-search
-description: Search the web with DuckDuckGo as a no-API-key fallback or second source. Use when the normal web_search tool or primary search provider is rate-limited, failing, unavailable, not delivering enough useful results, or producing weak/inaccurate results, and you want quick text, news, image, or video search results without browser automation.
+description: Search the web with DuckDuckGo as a no-API-key fallback or second source. Use when the normal web_search tool or primary search provider is rate-limited, failing, unavailable, not delivering enough useful results, or producing weak/inaccurate results, and you want quick text, news, image, or video search results, instant-answer lookups, or DuckDuckGo bang resolution without browser automation.
 ---
 
 # ddg-search
@@ -70,17 +70,35 @@ ddg-search search 'bitcoin logo' --type images --max-results 10
 ddg-search search 'openai launch' --type videos --timelimit w --max-results 10
 ```
 
-### Human-readable output
+### Restrict to one site
 
 ```bash
-ddg-search search 'site:docs.openclaw.ai browser' --text
+ddg-search search 'python dataclasses' --site docs.python.org
+```
+
+### Reverse result order
+
+```bash
+ddg-search search 'openai launch' --type videos --max-results 10 --reverse
+```
+
+### Instant-answer lookup
+
+```bash
+ddg-search instant 'weather berlin'
+```
+
+### Resolve a DuckDuckGo bang
+
+```bash
+ddg-search bang w 'OpenAI'
 ```
 
 ## Workflow
 
 1. Read `references/notes.md` if you want quick selection guidance.
 2. Ensure the `ddg-search` CLI is installed.
-3. Run `search` with the narrowest useful query.
+3. Use `search` for normal search, `instant` for instant-answer lookups, and `bang` when a DuckDuckGo bang is the cleanest path.
 4. Parse JSON output by default.
 5. Cross-check with another source when the question is important.
 
@@ -89,6 +107,10 @@ ddg-search search 'site:docs.openclaw.ai browser' --text
 The CLI returns JSON by default. Parse it instead of scraping text.
 
 Use `--text` when you want a readable terminal view.
+
+`search` returns query metadata plus `results`.
+`instant` returns instant-answer style structured fields.
+`bang` returns the DuckDuckGo URL plus the resolved redirect/final URL.
 
 ## Files
 
