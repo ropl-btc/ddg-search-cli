@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ddg-search-cli"
+version = "0.1.0"
+description = "Small DuckDuckGo search CLI with JSON output for fallback web search"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "ddgs>=9,<10",
+]
+license = { text = "MIT" }
+authors = [
+  { name = "ddg-search-cli contributors" }
+]
+
+[project.urls]
+Homepage = "https://github.com/ropl-btc/ddg-search-cli"
+Repository = "https://github.com/ropl-btc/ddg-search-cli"
+
+[project.scripts]
+ddg-search = "ddg_search.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
