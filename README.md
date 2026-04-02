@@ -1,4 +1,4 @@
-Update: new self-contained skill without the need for installing CLI is here: https://github.com/ropl-btc/agent-skills
+> Update: new self-contained skill without the need for installing CLI is here: https://github.com/ropl-btc/agent-skills
 
 # ddg-search-cli
 
