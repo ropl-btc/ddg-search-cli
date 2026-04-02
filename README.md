@@ -1,3 +1,5 @@
+Update: new self-contained skill without the need for installing CLI is here: https://github.com/ropl-btc/agent-skills
+
 # ddg-search-cli
 
 Small DuckDuckGo search CLI for **OpenClaw**, **Claude Code**, and other AI agents that need a simple fallback web search tool without an API key.
